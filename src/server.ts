@@ -20,9 +20,10 @@ server.use(express.static(path.join(__dirname, "../public")))
 
 // config rotas
 server.use(router)
+
 // config rota para pagina nao encontrada
 server.use((req,res)=>{
-    res.status(404).send("pagina nao encontrada!")
+    res.render("pages/404.mustache")
 })
 
 // servidor
