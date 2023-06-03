@@ -1,16 +1,7 @@
-
-
-type petty = 'dog' | 'cat' | 'fish'
-
-type Pet = {
-    type: petty,
-    image: string,
-    name: string,
-    color: string,
-    sex: 'Masculino' | 'Feminino'
-}
-
-const data: Pet[] = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Pet = void 0;
+const data = [
     {
         type: 'dog',
         image: 'pastor-alemao.jpg',
@@ -43,7 +34,7 @@ const data: Pet[] = [
         type: 'dog',
         image: 'golden.jpg',
         name: 'Golden Retriever',
-        color: 'neon',
+        color: 'Amarelo',
         sex: 'Masculino'
     },
     {
@@ -130,30 +121,22 @@ const data: Pet[] = [
         color: 'Preto',
         sex: 'Masculino'
     }
-]
-
-export const Pet = {
-    getAll: (): Pet[] => {
-        return data
+];
+exports.Pet = {
+    getAll: () => {
+        return data;
     },
-
-    getFromType: (type: petty): Pet[] => {
+    getFromType: (type) => {
         return data.filter(i => {
             if (i.type === type) {
-                return true
-            } else {
-                return false
+                return true;
             }
-        })
+            else {
+                return false;
+            }
+        });
     },
-
-    getFromNome: (name: string): Pet[] => {
-
-        return data.filter(i => i.name.toLowerCase().indexOf(name.toLowerCase()) > -1)
-
-    },
-
-    getFromCor: (color:string): Pet[] => {
-        return data.filter(i => i.color.toLowerCase().indexOf(color.toLowerCase()) > -1)
+    getFromNome: (name) => {
+        return data.filter(i => i.name.toLowerCase().indexOf(name.toLowerCase()) > -1);
     }
-}
+};

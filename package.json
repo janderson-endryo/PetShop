@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "projetor feito com node.js",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
+    "start": "nodemon -e js,json,mustache dist/server.js",
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -e ts,json,mustache src/server.ts"
+    "start-teste": "nodemon -e ts,json,mustache src/server.ts"
   },
   "repository": {
     "type": "git",
